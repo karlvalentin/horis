@@ -1,7 +1,9 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Schema;
 use Spatie\Permission\Models\Role;
 
@@ -21,6 +23,19 @@ class CreateAdminRole extends Migration
     {
         $adminRole = Role::create(['name' => 'admin']);
         $adminRole->save();
+
+        $admin = new User(
+            [
+                'name' => 'Admin Istrator',
+                'email' => 'admin@foo.bar',
+                'password' => Hash::make('123'),
+            ]
+        );
+
+        $admin->markEmailAsVerified();
+        $admin->assignRole('admin');
+
+        $admin->save();
     }
 
     /**

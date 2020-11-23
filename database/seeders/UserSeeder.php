@@ -15,17 +15,6 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        $admin = new User(
-            [
-                'name' => 'Admin Istrator',
-                'email' => 'admin@foo.bar',
-                'password' => Hash::make('123'),
-            ]
-        );
 
-        $admin->markEmailAsVerified();
-        $admin->assignRole('admin');
-
-        $admin->save();
     }
 }
