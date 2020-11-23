@@ -2,20 +2,40 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Laravel\Jetstream\Events\TeamCreated;
 use Laravel\Jetstream\Events\TeamDeleted;
 use Laravel\Jetstream\Events\TeamUpdated;
 use Laravel\Jetstream\Team as JetstreamTeam;
 
+/**
+ * Team model.
+ *
+ * @author Karl Valentin <karl.valentin@kvis.de>
+ *
+ * @property int $id
+ * @property int $user_id
+ * @property string $name
+ * @property boolean $personal_team
+ * @property Carbon $created_at
+ * @property Carbon $updated_at
+ */
 class Team extends JetstreamTeam
 {
+    const ATTR_ID = 'id';
+    const ATTR_USER_ID = 'user_id';
+    const ATTR_NAME = 'name';
+    const ATTR_PERSONAL_TEAM = 'personal_team';
+    const ATTR_CREATED_AT = 'created_at';
+    const ATTR_UPDATED_AT = 'updated_at';
+
     /**
      * The attributes that should be cast to native types.
      *
      * @var array
      */
     protected $casts = [
-        'personal_team' => 'boolean',
+        self::ATTR_PERSONAL_TEAM => 'boolean',
     ];
 
     /**
@@ -24,8 +44,8 @@ class Team extends JetstreamTeam
      * @var array
      */
     protected $fillable = [
-        'name',
-        'personal_team',
+        self::ATTR_NAME,
+        self::ATTR_PERSONAL_TEAM,
     ];
 
     /**
@@ -38,4 +58,14 @@ class Team extends JetstreamTeam
         'updated' => TeamUpdated::class,
         'deleted' => TeamDeleted::class,
     ];
+
+    /**
+     * Get related teams.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function customers()
+    {
+        return $this->belongsToMany(Customer::class);
+    }
 }
