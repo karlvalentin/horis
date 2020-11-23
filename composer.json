@@ -1,7 +1,15 @@
 {
-    "name": "laravel/laravel",
+    "name": "karlvalentin/horis",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "Time tracking software.",
+    "authors": [
+        {
+            "name": "Karl Valentin",
+            "email": "karl.valentin@kvis.de",
+            "homepage": "https://www.kvis.de",
+            "role": "Developer"
+        }
+    ],
     "keywords": [
         "framework",
         "laravel"
