@@ -21,13 +21,12 @@ class CreateProjectsTable extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
 
-            $table->string('name');
+            $table->string('name')->unique();
             $table->boolean('active');
 
             $table->unsignedBigInteger('customer_id')->nullable();
 
             $table->timestamps();
-            $table->softDeletes();
 
             $table
                 ->foreign('customer_id')

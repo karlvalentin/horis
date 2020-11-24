@@ -1,0 +1,27 @@
+.button {
+    @apply px-3 py-2 rounded-lg;
+}
+
+.button:focus {
+    @apply outline-none;
+}
+
+.button:hover {
+    @apply font-bold;
+}
+
+.button.button-success {
+    @apply bg-green-500 text-white;
+}
+
+.button.button-success:hover {
+    @apply bg-green-600 text-white;
+}
+
+.button.button-light {
+    @apply bg-gray-100;
+}
+
+.button.button-light:hover {
+    @apply bg-gray-300;
+}

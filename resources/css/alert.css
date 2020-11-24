@@ -1,0 +1,7 @@
+.alert {
+    @apply border rounded-lg p-4;
+}
+
+.alert-danger {
+    @apply bg-red-300;
+}

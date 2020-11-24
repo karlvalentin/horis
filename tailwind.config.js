@@ -12,7 +12,10 @@ module.exports = {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
-        },
+            outline: {
+                thin: '1px solid rgb(243, 244, 246)',
+            }
+        }
     },
 
     variants: {

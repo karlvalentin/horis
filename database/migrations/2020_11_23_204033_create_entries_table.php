@@ -22,7 +22,7 @@ class CreateEntriesTable extends Migration
             $table->id();
 
             $table->dateTime('start');
-            $table->dateTime('end');
+            $table->dateTime('end')->nullable();
             $table->string('description');
 
             $table->unsignedBigInteger('customer_id')->nullable();

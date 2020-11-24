@@ -16,6 +16,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property Carbon $start
  * @property Carbon $end
  * @property string $description
+ * @property int $project_id
+ * @property int $customer_id
+ * @property int $user_id
+ * @property int $activity_id
  */
 class Entry extends Model
 {
@@ -26,4 +30,18 @@ class Entry extends Model
     const ATTR_START = 'start';
     const ATTR_END = 'end';
     const ATTR_DESCRIPTION = 'description';
+    const ATTR_PROJECT_ID = 'project_id';
+    const ATTR_CUSTOMER_ID = 'customer_id';
+    const ATTR_USER_ID = 'user_id';
+    const ATTR_ACTIVITY_ID = 'activity_id';
+
+    public $fillable = [
+        self::ATTR_START,
+        self::ATTR_END,
+        self::ATTR_DESCRIPTION,
+        self::ATTR_PROJECT_ID,
+        self::ATTR_CUSTOMER_ID,
+        self::ATTR_USER_ID,
+        self::ATTR_ACTIVITY_ID,
+    ];
 }

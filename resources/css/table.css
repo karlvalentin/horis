@@ -1,0 +1,23 @@
+.table {
+    @apply w-full;
+}
+
+.table thead {
+    @apply border-b-2;
+}
+
+.table thead th {
+    @apply align-bottom p-3 text-left;
+}
+
+.table tbody tr {
+    @apply border-b;
+}
+
+.table tbody td {
+    @apply p-3 align-top text-left;
+}
+
+.table-striped tr:nth-child(even) {
+    @apply bg-gray-100;
+}

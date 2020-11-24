@@ -1,0 +1,31 @@
+.pagination {
+    @apply w-full flex justify-center my-8;
+}
+
+.pagination .page-item {
+    @apply mx-1 px-4 py-2 rounded-lg;
+}
+
+.pagination .page-item button:focus,
+.pagination .page-item span:focus
+{
+    @apply outline-none;
+}
+
+.pagination .page-item:hover {
+    @apply bg-gray-100;
+}
+
+.pagination .page-item.disabled:hover {
+    @apply bg-transparent;
+}
+
+.pagination .page-item:first-of-type,
+.pagination .page-item:last-of-type
+{
+    @apply bg-gray-100;
+}
+
+.pagination .page-item.active {
+    @apply bg-green-500 text-white font-bold;
+}

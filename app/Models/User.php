@@ -11,6 +11,13 @@ use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
+/**
+ * User model.
+ *
+ * @author Karl Valentin <karl.valentin@kvis.de>
+ *
+ * @property string $email
+ */
 class User extends Authenticatable
 {
     use HasApiTokens;
@@ -20,6 +27,8 @@ class User extends Authenticatable
     use Notifiable;
     use TwoFactorAuthenticatable;
     use HasRoles;
+
+    const ATTR_EMAIL = 'email';
 
     /**
      * The attributes that are mass assignable.

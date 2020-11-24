@@ -20,3 +20,64 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::middleware(['auth:web', 'role:admin'])->group(function() {
+    Route::get(
+        'projects/{project}/delete',
+        [
+            \App\Http\Controllers\ProjectController::class,
+            'destroy'
+        ]
+    )
+        ->name('projects.delete');
+
+    Route::resource(
+        'projects',
+        \App\Http\Controllers\ProjectController::class,
+        [
+            'names' => [
+                'index' => 'projects',
+            ],
+        ]
+    );
+
+    Route::get(
+        'customers/{customer}/delete',
+        [
+            \App\Http\Controllers\CustomerController::class,
+            'destroy'
+        ]
+    )
+        ->name('customers.delete');
+
+    Route::resource(
+        'customers',
+        \App\Http\Controllers\CustomerController::class,
+        [
+            'names' => [
+                'index' => 'customers',
+            ],
+        ]
+    );
+
+    Route::get(
+        'activities/{activity}/delete',
+        [
+            \App\Http\Controllers\ActivityController::class,
+            'destroy'
+        ]
+    )
+        ->name('activities.delete');
+
+    Route::resource(
+        'activities',
+        \App\Http\Controllers\ActivityController::class,
+        [
+            'names' => [
+                'index' => 'activities',
+            ],
+        ]
+    );
+});
+
+

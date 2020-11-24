@@ -88,6 +88,13 @@
       0 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
     ),
   ),
+  'rappasoft/laravel-livewire-tables' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Rappasoft\\LaravelLivewireTables\\LaravelLivewireTablesServiceProvider',
+    ),
+  ),
   'spatie/laravel-permission' => 
   array (
     'providers' => 
